@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="Windows-1250" ?>
+
+<DataFile Name="TimelineFile" Signature="ATLF" Version="1.00" XmlMethods="False" DataByNameMethod="0">
+
+  <DataRecordEx Id="1" Name="EventData" Single="0">
+    <DataPart Id="1" Name="D">
+      <Field Name="Timestamp" Type="TDateTime" />
+      <Field Name="Bit" Type="Byte" />
+      <Field Name="Value" Type="Boolean" />
+    </DataPart>
+    <StringPart Id="2" Name="Description" />
+  </DataRecordEx>
+
+</DataFile>

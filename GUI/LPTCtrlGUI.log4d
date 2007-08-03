@@ -1,0 +1,8 @@
+log4d.appender.logfile=TLogFileAppender
+log4d.appender.logfile.append=true
+log4d.appender.logfile.fileName=LPTCtrlGUI.log
+log4d.appender.logfile.layout=TLogPatternLayout
+log4d.appender.logfile.layout.pattern=[%-5p] %l - %m%n
+#log4d.appender.logfile.layout.pattern=[%-5p] %m%n
+
+log4d.rootLogger=debug,logfile

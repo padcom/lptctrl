@@ -10,7 +10,9 @@ function ToggleStatusBit(bit)
       if (request.status == 200)
       {
         var response = request.responseText;
-        document.getElementById("BIT"+bit).innerHTML = (response & (1 << bit)) ? "ON" : "OFF"; 
+//        document.getElementById("BIT"+bit).innerHTML = (response & (1 << bit)) ? "ON" : "OFF"; 
+        document.getElementById("BIT"+bit).innerHTML = (response & (1 << bit)) ? "<img src='images/on.bmp'></img>" : "<img src='images/off.bmp'></img>"; 
+        document.getElementById("BtnBIT"+bit).value = (response & (1 << bit)) ? "Wy³¹cz" : "W³¹cz"; 
       }
       else	
         window.alert("Error: returned status code " + request.status + " " + request.statusText);
@@ -33,7 +35,9 @@ function UpdateStatusBit(bit)
       if (request.status == 200)
       {
         var response = request.responseText;
-        document.getElementById("BIT"+bit).innerHTML = (response & (1 << bit)) ? "ON" : "OFF"; 
+//        document.getElementById("BIT"+bit).innerHTML = (response & (1 << bit)) ? "ON" : "OFF"; 
+        document.getElementById("BIT"+bit).innerHTML = (response & (1 << bit)) ? "<img src='images/on.bmp'></img>" : "<img src='images/off.bmp'></img>"; 
+        document.getElementById("BtnBIT"+bit).value = (response & (1 << bit)) ? "Wy³¹cz" : "W³¹cz"; 
       }
       else	
         window.alert("Error: returned status code " + request.status + " " + request.statusText);
@@ -58,7 +62,9 @@ function GetStatus()
         var response = request.responseText;
         for (bit = 0; bit < 8; bit++)
         {
-          document.getElementById("BIT"+bit).innerHTML = response & 1 ? "ON" : "OFF"; 
+//          document.getElementById("BIT"+bit).innerHTML = response & 1 ? "ON" : "OFF"; 
+          document.getElementById("BIT"+bit).innerHTML = response & 1 ? "<img src='images/on.bmp'></img>" : "<img src='images/off.bmp'></img>"; 
+          document.getElementById("BtnBIT"+bit).value = response & 1 ? "Wy³¹cz" : "W³¹cz"; 
           response = response >> 1;
         }
       }

@@ -28,7 +28,6 @@ function GetRequestObject()
 
   if (!http_request)
     window.alert("Your browser does not support Ajax!");
-    
 
   return http_request;
 }

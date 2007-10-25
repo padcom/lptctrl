@@ -120,6 +120,8 @@ procedure TFrmMain.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftStat
       VK_F6: Result := 5;
       VK_F7: Result := 6;
       VK_F8: Result := 7;
+      VK_F9: Result := 256;
+      VK_F10: Result := 257;
     end;
   end;
 var
@@ -127,13 +129,33 @@ var
   Status: Byte;
 begin
   Bit := KeyToBit(Key);
-  if Bit >= 0 then
+  if Bit in [0..7] then
   begin
     Screen.Cursor := crHourGlass;
     try
       Status := Client.GetPortStatus;
       Status := Status xor (1 shl BIT);
       Client.SetPortStatus(Status);
+      UpdateLEDs;
+    finally
+      Screen.Cursor := crDefault;
+    end;
+  end
+  else if Bit = 256 then
+  begin
+    Screen.Cursor := crHourGlass;
+    try
+      Client.SetPortStatus(255);
+      UpdateLEDs;
+    finally
+      Screen.Cursor := crDefault;
+    end;
+  end
+  else if Bit = 257 then
+  begin
+    Screen.Cursor := crHourGlass;
+    try
+      Client.SetPortStatus(0);
       UpdateLEDs;
     finally
       Screen.Cursor := crDefault;

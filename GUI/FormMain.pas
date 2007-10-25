@@ -31,6 +31,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure FormResize(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure TmrStatusUpdateTimer(Sender: TObject);
     procedure BtnManageClick(Sender: TObject);
   private
@@ -104,6 +105,40 @@ end;
 procedure TFrmMain.FormResize(Sender: TObject);
 begin
 //
+end;
+
+procedure TFrmMain.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+  function KeyToBit(Key: Word): Integer;
+  begin
+    Result := -1;
+    case Key of
+      VK_F1: Result := 0;
+      VK_F2: Result := 1;
+      VK_F3: Result := 2;
+      VK_F4: Result := 3;
+      VK_F5: Result := 4;
+      VK_F6: Result := 5;
+      VK_F7: Result := 6;
+      VK_F8: Result := 7;
+    end;
+  end;
+var
+  Bit: Integer;
+  Status: Byte;
+begin
+  Bit := KeyToBit(Key);
+  if Bit >= 0 then
+  begin
+    Screen.Cursor := crHourGlass;
+    try
+      Status := Client.GetPortStatus;
+      Status := Status xor (1 shl BIT);
+      Client.SetPortStatus(Status);
+      UpdateLEDs;
+    finally
+      Screen.Cursor := crDefault;
+    end;
+  end;
 end;
 
 procedure TFrmMain.TmrStatusUpdateTimer(Sender: TObject);

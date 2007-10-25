@@ -12,11 +12,13 @@ object FrmMain: TFrmMain
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  KeyPreview = True
   OldCreateOrder = False
   Position = poScreenCenter
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
   OnResize = FormResize
   OnShow = FormShow
   PixelsPerInch = 96
@@ -66,7 +68,7 @@ object FrmMain: TFrmMain
     Top = 40
     Width = 75
     Height = 25
-    Caption = 'BIT0'
+    Caption = 'BIT0 - F1'
     TabOrder = 0
     OnClick = BtnManageClick
   end
@@ -76,7 +78,7 @@ object FrmMain: TFrmMain
     Top = 40
     Width = 75
     Height = 25
-    Caption = 'BIT1'
+    Caption = 'BIT1 - F2'
     TabOrder = 1
     OnClick = BtnManageClick
   end
@@ -86,7 +88,7 @@ object FrmMain: TFrmMain
     Top = 40
     Width = 75
     Height = 25
-    Caption = 'BIT2'
+    Caption = 'BIT2 - F3'
     TabOrder = 2
     OnClick = BtnManageClick
   end
@@ -96,7 +98,7 @@ object FrmMain: TFrmMain
     Top = 40
     Width = 75
     Height = 25
-    Caption = 'BIT3'
+    Caption = 'BIT3 - F4'
     TabOrder = 3
     OnClick = BtnManageClick
   end
@@ -106,7 +108,7 @@ object FrmMain: TFrmMain
     Top = 40
     Width = 75
     Height = 25
-    Caption = 'BIT4'
+    Caption = 'BIT4 - F5'
     TabOrder = 4
     OnClick = BtnManageClick
   end
@@ -116,7 +118,7 @@ object FrmMain: TFrmMain
     Top = 40
     Width = 75
     Height = 25
-    Caption = 'BIT5'
+    Caption = 'BIT5 - F6'
     TabOrder = 5
     OnClick = BtnManageClick
   end
@@ -126,7 +128,7 @@ object FrmMain: TFrmMain
     Top = 40
     Width = 75
     Height = 25
-    Caption = 'BIT6'
+    Caption = 'BIT6 - F7'
     TabOrder = 6
     OnClick = BtnManageClick
   end
@@ -136,7 +138,7 @@ object FrmMain: TFrmMain
     Top = 40
     Width = 75
     Height = 25
-    Caption = 'BIT7'
+    Caption = 'BIT7 - F8'
     TabOrder = 7
     OnClick = BtnManageClick
   end

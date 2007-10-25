@@ -170,9 +170,14 @@ procedure TFrmOutputControler.BtnToggleClick(Sender: TObject);
 var
   Status: Byte;
 begin
-  Status := Client.GetPortStatus;
-  Status := Status xor (1 shl BIT);
-  Client.SetPortStatus(Status);
+  Screen.Cursor := crHourGlass;
+  try
+    Status := Client.GetPortStatus;
+    Status := Status xor (1 shl BIT);
+    Client.SetPortStatus(Status);
+  finally
+    Screen.Cursor := crDefault;
+  end;
 end;
 
 procedure TFrmOutputControler.BtnCloseClick(Sender: TObject);

@@ -118,7 +118,7 @@ var
   Request: TSetPortStatusRec;
   Response: TPortStatusRec;
 begin
-  Log.Debug('Setting port status to %d', [Value]);
+  Log.Debug(Format('Setting port status to %d', [Value]));
 
   Assert(FSocket <> INVALID_SOCKET, 'Error: not connected');
 
@@ -134,7 +134,7 @@ var
   Request: TSetBitStatusRec;
   Response: TBitStatusRec;
 begin
-  Log.Debug('Setting bit %d to %d', [Bit, Byte(Status)]);
+  Log.Debug(Format('Setting bit %d to %d', [Bit, Byte(Status)]));
 
   Assert(FSocket <> INVALID_SOCKET, 'Error: not connected');
 
@@ -150,11 +150,11 @@ procedure TLPTControlerClient.AddEvent(Timestamp: TDateTime; Bit: TBit; Status: 
 var
   Data: TAddEventRec;
 begin
-  Log.Debug('Adding event on %s on bit %d with status %d', [
+  Log.Debug(Format('Adding event on %s on bit %d with status %d', [
     FormatDateTime('YYYY-MM-DD HH:NN:SS', Timestamp),
     Bit,
     Byte(Status)
-  ]);
+  ]));
 
   Assert(FSocket <> INVALID_SOCKET, 'Error: not connected');
 
@@ -171,10 +171,10 @@ procedure TLPTControlerClient.RemoveEvent(Timestamp: TDateTime; Bit: TBit);
 var
   Data: TAddEventRec;
 begin
-  Log.Debug('Removing event on %s on bit %d', [
+  Log.Debug(Format('Removing event on %s on bit %d', [
     FormatDateTime('YYYY-MM-DD HH:NN:SS', Timestamp),
     Bit
-  ]);
+  ]));
 
   Assert(FSocket <> INVALID_SOCKET, 'Error: not connected');
 

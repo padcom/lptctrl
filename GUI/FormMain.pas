@@ -46,7 +46,7 @@ var
 implementation
 
 uses
-  LPTClient, FormOutputControler;
+  LPTClient, OutputControler;
 
 {$R *.dfm}
 
@@ -113,13 +113,7 @@ end;
 
 procedure TFrmMain.BtnManageClick(Sender: TObject);
 begin
-  with TFrmOutputControler.Create(nil) do
-    try
-      BIT := TComponent(Sender).Tag;
-      ShowModal;
-    finally
-      Free;
-    end;
+  TOutputControler.Instance[TComponent(Sender).Tag].Show;
 end;
 
 end.

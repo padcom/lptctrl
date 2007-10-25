@@ -25,6 +25,7 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormResize(Sender: TObject);
     procedure BtnToggleClick(Sender: TObject);
     procedure BtnCloseClick(Sender: TObject);
@@ -54,7 +55,7 @@ type
 implementation
 
 uses
-  LPTPort, LPTClient, FormEventEditor;
+  LPTPort, LPTClient, FormEventEditor, OutputControler;
 
 {$R *.dfm}
 
@@ -139,7 +140,7 @@ end;
 
 procedure TFrmOutputControler.FormDestroy(Sender: TObject);
 begin
-//
+  TOutputControler.Instance[BIT] := nil;
 end;
 
 procedure TFrmOutputControler.FormShow(Sender: TObject);
@@ -152,6 +153,12 @@ end;
 procedure TFrmOutputControler.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
 //
+end;
+
+procedure TFrmOutputControler.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  Action := caFree;
 end;
 
 procedure TFrmOutputControler.FormResize(Sender: TObject);

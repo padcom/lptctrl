@@ -9,6 +9,7 @@ uses
   Protocol in '..\Common\Protocol.pas',
   FormMain in 'FormMain.pas' {FrmMain},
   LPTClient in 'LPTClient.pas',
+  OutputControler in 'OutputControler.pas',
   FormOutputControler in 'FormOutputControler.pas' {FrmOutputControler},
   FormEventEditor in 'FormEventEditor.pas' {FrmEventEditor};
 

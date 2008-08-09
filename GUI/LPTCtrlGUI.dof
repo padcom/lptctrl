@@ -94,7 +94,7 @@ OutputDir=
 UnitOutputDir=
 PackageDLLOutputDir=
 PackageDCPOutputDir=
-SearchPath=
+SearchPath=..\components\log4d;..\components\pxlib;..\components\inpout32
 Packages=vcl;rtl;vclx;VclSmp;vclshlctrls;pxvcl_d7
 Conditionals=
 DebugSourceDirs=
@@ -130,9 +130,14 @@ OriginalFilename=
 ProductName=
 ProductVersion=1.0.0.0
 Comments=
+[Excluded Packages]
+C:\Program Files\RemObjects Software\Everwood\Bin\RemObjects_Everwood_D7.bpl=RemObjects Everwood for Delphi
+X:\pascalscript\Dcu\D7\PascalScript_Core_D7.bpl=RemObjects Pascal Script - Core Package
 [HistoryLists\hlUnitAliases]
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
 [HistoryLists\hlSearchPath]
-Count=1
-Item0=X:\components-source\indysoap-src
+Count=3
+Item0=..\components\log4d;..\components\pxlib;..\components\inpout32
+Item1=..\components\log4d;..\components\pxlib
+Item2=X:\components-source\indysoap-src

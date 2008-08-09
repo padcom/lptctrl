@@ -29,15 +29,15 @@ type
     LblBIT7: TLabel;
     BvlActionsHeader: TBevel;
     LblActionsHeader: TLabel;
-    Button1: TButton;
-    Button2: TButton;
+    BtnSaveToXML: TButton;
+    BtnLoadFromXML: TButton;
     Button3: TButton;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+    procedure BtnSaveToXMLClick(Sender: TObject);
+    procedure BtnLoadFromXMLClick(Sender: TObject);
   private
     { Private declarations }
     FGUIUpdater: TGUIUpdater;
@@ -127,33 +127,30 @@ begin
 //
 end;
 
-procedure TFrmMain.Button1Click(Sender: TObject);
-var
-  Client: TLPTControlerClient;
+procedure TFrmMain.BtnSaveToXMLClick(Sender: TObject);
 begin
-  Client := TLPTControlerClient.Create;
-  try
-    Client.AddEvent(Now + OneHour + OneSecond * 3, 5, bsOn);
-    Client.AddEvent(Now + OneHour + OneSecond * 4, 5, bsOff);
-    Client.AddEvent(Now + OneHour + OneSecond * 5, 5, bsOff);
-    Client.RemoveEvent(Now + OneHour + OneSecond * 5, 5);
-  finally
-    Client.Free;
-  end;
+  with TSaveDialog.Create(nil) do
+    try
+      Filter := 'XML files (*.xml)|*.xml|All files (*.*)|*.*';
+      DefaultExt := '.xml';
+      if Execute then
+        FTimelineControler.TimelineData.SaveXmlFile(FileName);
+    finally
+      Free;
+    end;
 end;
 
-procedure TFrmMain.Button2Click(Sender: TObject);
-var
-  Client: TLPTControlerClient;
-  Events: TEventList;
+procedure TFrmMain.BtnLoadFromXMLClick(Sender: TObject);
 begin
-  Client := TLPTControlerClient.Create;
-  try
-    Client.GetEventList(Events);
-    ShowMessageFmt('Events count: %d', [Length(Events)]);
-  finally
-    Client.Free;
-  end;
+  with TOpenDialog.Create(nil) do
+    try
+      Filter := 'XML files (*.xml)|*.xml|All files (*.*)|*.*';
+      DefaultExt := '.xml';
+      if Execute then
+        FTimelineControler.TimelineData.LoadXmlFile(FileName);
+    finally
+      Free;
+    end;
 end;
 
 end.

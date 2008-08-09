@@ -156,26 +156,26 @@ object FrmMain: TFrmMain
     Height = 13
     Caption = 'LblActionsHeader'
   end
-  object Button1: TButton
-    Left = 160
+  object BtnSaveToXML: TButton
+    Left = 64
     Top = 128
     Width = 75
     Height = 25
-    Caption = 'Button1'
+    Caption = 'Save to XML'
     TabOrder = 0
-    OnClick = Button1Click
+    OnClick = BtnSaveToXMLClick
   end
-  object Button2: TButton
-    Left = 240
+  object BtnLoadFromXML: TButton
+    Left = 144
     Top = 128
-    Width = 75
+    Width = 89
     Height = 25
-    Caption = 'Button2'
+    Caption = 'Load from XML'
     TabOrder = 1
-    OnClick = Button2Click
+    OnClick = BtnLoadFromXMLClick
   end
   object Button3: TButton
-    Left = 320
+    Left = 312
     Top = 128
     Width = 75
     Height = 25

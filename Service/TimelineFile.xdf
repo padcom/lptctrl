@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="Windows-1250" ?>
 
-<DataFile Name="TimelineFile" Signature="ATLF" Version="1.00" XmlMethods="False" DataByNameMethod="0">
+<DataFile Name="TimelineFile" Signature="ATLF" Version="1.00" XmlMethods="True" DataByNameMethod="0">
 
   <DataRecordEx Id="1" Name="EventData" Single="0">
     <DataPart Id="1" Name="D">

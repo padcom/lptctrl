@@ -1,0 +1,1 @@
+CREATE DATABASE 'lptctrl' USER 'SYSDBA' PASSWORD 'masterkey';

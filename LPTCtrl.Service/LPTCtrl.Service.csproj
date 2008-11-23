@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>LPTCtrl.Service</RootNamespace>
-    <AssemblyName>lptctrl-service</AssemblyName>
+    <AssemblyName>LPTCtrl.Service</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -53,17 +53,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Source\DataProvider.cs" />
-    <Compile Include="Source\FormMain.cs">
+    <Compile Include="DataProvider.cs" />
+    <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\FormMain.Designer.cs">
+    <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\LPTPort.cs" />
-    <Compile Include="Source\Program.cs" />
+    <Compile Include="LPTPort.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Source\FormMain.resx">
+    <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -76,10 +76,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Content Include="hwinterface.sys">
-      <CustomToolNamespace>.</CustomToolNamespace>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -92,13 +88,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fbclient.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FirebirdSql.Data.FirebirdClient.dll" />
-    <Content Include="inpout32.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <ProjectReference Include="..\LPTCtrl.Dependencies\LPTCtrl.Dependencies.csproj">
+      <Project>{7F3AA58C-968A-4107-A214-2E4D434DA073}</Project>
+      <Name>LPTCtrl.Dependencies</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

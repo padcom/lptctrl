@@ -25,6 +25,7 @@ CREATE TABLE PORT (
 	NAME      CHAR(4),
     
 	PRIMARY KEY (ID)
+	CONSTRAINT PORT_ADDRESS CHECK (ADDRESS BETWEEN 0 AND 65535)
 );
 
 -------------------------------------------------------------------------------
@@ -39,7 +40,7 @@ CREATE TABLE PIN (
     
 	PRIMARY KEY (ID),
 	FOREIGN KEY (PORTID) REFERENCES PORT(ID),
-	CONSTRAINT PIN_BIT CHECK  (BIT BETWEEN 0 AND 7)
+	CONSTRAINT PIN_BIT CHECK (BIT BETWEEN 0 AND 7)
 );
 
 -------------------------------------------------------------------------------

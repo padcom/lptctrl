@@ -6,6 +6,8 @@ using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Http;
 
+using LPTCtrl.Service.Core;
+
 namespace LPTCtrl.Service {
     static class Program {
 
@@ -16,7 +18,7 @@ namespace LPTCtrl.Service {
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+            Application.Run(new LPTCtrl.Service.UI.FormMain());
         }
     }
 }

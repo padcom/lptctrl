@@ -6,7 +6,7 @@ using System.Data;
 using FirebirdSql.Data.FirebirdClient;
 using LPTCtrl.Service.Properties;
 
-namespace LPTCtrl.Service {
+namespace LPTCtrl.Service.Data {
     class DataProvider {
         private static FbConnection connection = new FbConnection(Settings.Default.ConnectionString);
 

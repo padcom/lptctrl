@@ -8,6 +8,8 @@ SET TERM !! ;
 -- PORT
 -------------------------------------------------------------------------------
 
+CREATE GENERATOR PORT_ID !!
+
 CREATE TRIGGER SET_PORT_ID FOR PORT BEFORE INSERT AS
 BEGIN
   IF (NEW.ID = 0) THEN
@@ -34,6 +36,8 @@ END !!
 -- PIN
 -------------------------------------------------------------------------------
 
+CREATE GENERATOR PIN_ID !!
+
 CREATE TRIGGER SET_PIN_ID FOR PIN BEFORE INSERT AS
 BEGIN
   IF (NEW.ID = 0) THEN
@@ -59,6 +63,8 @@ END !!
 -------------------------------------------------------------------------------
 -- EVENT
 -------------------------------------------------------------------------------
+
+CREATE GENERATOR EVENT_ID !!
 
 CREATE TRIGGER SET_EVENT_ID FOR EVENT BEFORE INSERT AS
 BEGIN

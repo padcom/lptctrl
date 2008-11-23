@@ -1,4 +1,5 @@
-﻿namespace LPTCtrl.Service {
+﻿namespace LPTCtrl.Service.UI
+{
     partial class FormMain {
         /// <summary>
         /// Required designer variable.

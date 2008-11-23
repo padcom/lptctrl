@@ -22,12 +22,10 @@ CREATE INDEX IDX_UPDATES_BY_DATE ON UPDATES(DATA);
 CREATE TABLE PORT (
 	ID        INT NOT NULL,
 	ADDRESS   INT NOT NULL,
-	NAME      CHAR(5),
+	NAME      CHAR(4),
     
 	PRIMARY KEY (ID)
 );
-
-CREATE GENERATOR PORT_ID; 
 
 -------------------------------------------------------------------------------
 -- PIN
@@ -36,14 +34,13 @@ CREATE GENERATOR PORT_ID;
 CREATE TABLE PIN (
 	ID        INT NOT NULL,
 	BIT       INT NOT NULL,
-	NAME      CHAR(255),
-	PORTID    INT,
+	NAME      VARCHAR(60),
+	PORTID    INT NOT NULL,
     
 	PRIMARY KEY (ID),
-	FOREIGN KEY (PORTID) REFERENCES PORT(ID)
+	FOREIGN KEY (PORTID) REFERENCES PORT(ID),
+	CONSTRAINT PIN_BIT CHECK  (BIT BETWEEN 0 AND 7)
 );
-
-CREATE GENERATOR PIN_ID;
 
 -------------------------------------------------------------------------------
 -- EVENT
@@ -53,11 +50,10 @@ CREATE TABLE EVENT (
 	ID        INT NOT NULL,
 	TS        TIMESTAMP NOT NULL,
 	STATE     INT NOT NULL,
-	PINID     INT,
-    
+	PINID     INT NOT NULL,
+	REPEAT    INT DEFAULT 0,
+	              
 	PRIMARY KEY (ID),
 	FOREIGN KEY (PINID) REFERENCES PIN(ID)
 );
-
-CREATE GENERATOR EVENT_ID;
 

@@ -7,7 +7,7 @@ using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Http;
 
-namespace LPTCtrl.Service
+namespace LPTCtrl.Service.Core
 {
     class LPTPort : MarshalByRefObject
     {

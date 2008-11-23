@@ -8,7 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace LPTCtrl.Service {
+using LPTCtrl.Service.Core;
+using LPTCtrl.Service.Data;
+
+namespace LPTCtrl.Service.UI {
     public partial class FormMain : Form {
         public FormMain() {
             InitializeComponent();

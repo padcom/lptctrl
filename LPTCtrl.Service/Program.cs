@@ -6,6 +6,11 @@ using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Http;
 
+using NHibernate;
+using log4net;
+using log4net.Config;
+
+using LPTCtrl.Data.Domain;
 using LPTCtrl.Service.Core;
 
 namespace LPTCtrl.Service {
@@ -13,6 +18,8 @@ namespace LPTCtrl.Service {
 
         [STAThread]
         static void Main() {
+			log4net.Config.XmlConfigurator.Configure();
+
             ChannelServices.RegisterChannel(new HttpChannel(9998), false);
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(LPTPort), "LPTPort", WellKnownObjectMode.SingleCall);
 

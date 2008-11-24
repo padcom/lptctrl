@@ -9,7 +9,6 @@ using System.Text;
 using System.Windows.Forms;
 
 using LPTCtrl.Service.Core;
-using LPTCtrl.Service.Data;
 
 namespace LPTCtrl.Service.UI {
     public partial class FormMain : Form {
@@ -33,16 +32,7 @@ namespace LPTCtrl.Service.UI {
         }
 
         private void ActionTimer_Tick(object sender, EventArgs e) {
-            DataSet events = DataProvider.GetEvents(
-                DateTime.Now.AddSeconds(-ActionTimer.Interval / 1000),
-                DateTime.Now.AddSeconds(ActionTimer.Interval / 1000)
-            );
-            foreach (DataRow row in events.Tables[0].Rows) {
-                int bit = row.Field<int>("BIT");
-                int state = row.Field<int>("STATE");
-                LPTPort.Default.SetBit(bit, state == 1);
-                Thread.Sleep(50);
-            }
+			new EventProcessor().ProcessEvents(ActionTimer.Interval);
         }
     }
 }

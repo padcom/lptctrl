@@ -6,22 +6,16 @@ using System.Data;
 using FirebirdSql.Data.FirebirdClient;
 using LPTCtrl.Service.Properties;
 
+using LPTCtrl.Data;
+using LPTCtrl.Data.Domain;
+
 namespace LPTCtrl.Service.Data {
     class DataProvider {
-        private static FbConnection connection = new FbConnection(Settings.Default.LPTCtrlDB);
-
-        public static DataSet GetEvents(DateTime from, DateTime to) {
-            connection.Open();
-            FbCommand cmd = connection.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = String.Format("select EVENT.ID as ID, EVENT.TS as TS, EVENT.STATE as STATE, PIN.BIT as BIT from EVENT, PIN where EVENT.PINID=PIN.ID and EVENT.TS between '{0}' and '{1}'", 
-                from.ToString("yyyy-MM-dd HH:mm:ss"),
-                to.ToString("yyyy-MM-dd HH:mm:ss")
-            );
-            DataSet Result = new DataSet();
-            Result.Load(cmd.ExecuteReader(), LoadOption.Upsert, new string[] {"EVENT"});
-			connection.Close();
-			return Result;
+        public static IList<Event> GetEvents(DateTime from, DateTime to) {
+			return Utilities.DefaultSession.CreateQuery(
+				"from Event as event where event.Timestamp between :from and :to")
+				.SetTimestamp("from", from)
+				.SetTimestamp("to", to).List<Event>();
         }
     }
 }

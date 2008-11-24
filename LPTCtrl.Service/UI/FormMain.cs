@@ -17,9 +17,13 @@ namespace LPTCtrl.Service.UI {
             InitializeComponent();
         }
 
+		private void FormMain_VisibleChanged(object sender, EventArgs e) {
+			Hide();
+		}
+
         private bool ShouldClose = false;
 
-        private void FormMain_FormClosing(object sender, FormClosingEventArgs e) {
+		private void FormMain_FormClosing(object sender, FormClosingEventArgs e) {
             e.Cancel = !ShouldClose;
         }
 

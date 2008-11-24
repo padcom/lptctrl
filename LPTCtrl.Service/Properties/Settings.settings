@@ -2,8 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LPTCtrl.Service.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="ConnectionString" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">User=SYSDBA;Password=masterkey;Database=LPTCTRL;DataSource=localhost;Dialect=3</Value>
+    <Setting Name="LPTCtrlDB" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">User=SYSDBA;Password=masterkey;Database=LPTCTRL;DataSource=localhost;Dialect=3;Connection lifetime=15;Pooling=true; MinPoolSize=0;MaxPoolSize=50</Value>
     </Setting>
   </Settings>
 </SettingsFile>

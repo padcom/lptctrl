@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="LPTCtrl.Domain" namespace="LPTCtrl.Data.Domain">
+	<class name="Port" table="PORT">
+		<id name="ID" column="ID" type="int">
+			<generator class="native" />
+		</id>
+		<property name="Address" column="ADDRESS" type="int" not-null="true" />
+		<property name="Name" column="NAME" type="string"/>
+		<bag name="Pins" cascade="delete" inverse="true" >
+			<key column="PORTID" />
+			<one-to-many class="Pin" />
+		</bag>
+	</class>
+</hibernate-mapping>

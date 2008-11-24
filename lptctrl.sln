@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPTCtrl.Service", "LPTCtrl.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPTCtrl.Dependencies", "LPTCtrl.Dependencies\LPTCtrl.Dependencies.csproj", "{7F3AA58C-968A-4107-A214-2E4D434DA073}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPTCtrl.Data", "LPTCtrl.Data\LPTCtrl.Data.csproj", "{2DFB961F-0565-4C44-A1AE-353B2E30F175}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{7F3AA58C-968A-4107-A214-2E4D434DA073}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F3AA58C-968A-4107-A214-2E4D434DA073}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F3AA58C-968A-4107-A214-2E4D434DA073}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DFB961F-0565-4C44-A1AE-353B2E30F175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DFB961F-0565-4C44-A1AE-353B2E30F175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DFB961F-0565-4C44-A1AE-353B2E30F175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DFB961F-0565-4C44-A1AE-353B2E30F175}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

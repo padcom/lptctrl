@@ -8,12 +8,10 @@ using LPTCtrl.Service.Properties;
 
 namespace LPTCtrl.Service.Data {
     class DataProvider {
-        private static FbConnection connection = new FbConnection(Settings.Default.ConnectionString);
+        private static FbConnection connection = new FbConnection(Settings.Default.LPTCtrlDB);
 
         public static DataSet GetEvents(DateTime from, DateTime to) {
-            if (connection.State == ConnectionState.Closed) {
-                connection.Open();
-            }
+            connection.Open();
             FbCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = String.Format("select EVENT.ID as ID, EVENT.TS as TS, EVENT.STATE as STATE, PIN.BIT as BIT from EVENT, PIN where EVENT.PINID=PIN.ID and EVENT.TS between '{0}' and '{1}'", 
@@ -22,7 +20,8 @@ namespace LPTCtrl.Service.Data {
             );
             DataSet Result = new DataSet();
             Result.Load(cmd.ExecuteReader(), LoadOption.Upsert, new string[] {"EVENT"});
-            return Result;
+			connection.Close();
+			return Result;
         }
     }
 }

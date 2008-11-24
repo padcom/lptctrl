@@ -25,10 +25,11 @@ namespace LPTCtrl.Service.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("User=SYSDBA;Password=masterkey;Database=LPTCTRL;DataSource=localhost;Dialect=3")]
-        public string ConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("User=SYSDBA;Password=masterkey;Database=LPTCTRL;DataSource=localhost;Dialect=3;Co" +
+            "nnection lifetime=15;Pooling=true; MinPoolSize=0;MaxPoolSize=50")]
+        public string LPTCtrlDB {
             get {
-                return ((string)(this["ConnectionString"]));
+                return ((string)(this["LPTCtrlDB"]));
             }
         }
     }

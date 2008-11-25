@@ -15,7 +15,7 @@ namespace LPTCtrl.Service.Core {
 				DateTime.Now.AddSeconds(interval / 1000)
 			);
 			foreach (Event e in events) {
-				LPTPort.Default.SetBit(e.Pin.Bit, e.State);
+				LPTPort.LPT1.SetBit(e.Pin.Bit, e.State);
 				Thread.Sleep(50);
 			}
 		}

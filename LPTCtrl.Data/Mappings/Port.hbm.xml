@@ -3,10 +3,12 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="LPTCtrl.Data" namespace="LPTCtrl.Data.Domain">
 	<class name="Port" table="PORT" lazy="false">
 		<id name="ID" column="ID" type="int">
-			<generator class="native" />
+			<generator class="sequence">
+				<param name="sequence">PORT_ID</param>
+			</generator>
 		</id>
 		<property name="Address" column="ADDRESS" type="int" not-null="true" />
-		<property name="Name" column="NAME" type="string"/>
+		<property name="Name" column="NAME" type="string" />
 		<bag name="Pins" cascade="delete" inverse="true" >
 			<key column="PORTID" />
 			<one-to-many class="Pin" />

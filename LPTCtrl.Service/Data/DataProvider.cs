@@ -15,7 +15,8 @@ namespace LPTCtrl.Service.Data {
 			return Utilities.DefaultSession.CreateQuery(
 				"from Event as event where event.Timestamp between :from and :to")
 				.SetTimestamp("from", from)
-				.SetTimestamp("to", to).List<Event>();
-        }
+				.SetTimestamp("to", to)
+				.List<Event>();
+		}
     }
 }

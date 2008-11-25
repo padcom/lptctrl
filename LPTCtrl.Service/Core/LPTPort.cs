@@ -17,7 +17,7 @@ namespace LPTCtrl.Service.Core
         [DllImport("inpout32.dll", EntryPoint = "Out32")]
         private static extern void Output(int adress, int value);
 
-        public static LPTPort Default = new LPTPort();
+        public static readonly LPTPort LPT1 = new LPTPort();
 
         public int Get()
         {

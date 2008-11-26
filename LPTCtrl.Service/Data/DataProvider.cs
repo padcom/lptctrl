@@ -13,10 +13,10 @@ namespace LPTCtrl.Service.Data {
     class DataProvider {
         public static IList<Event> GetEvents(DateTime from, DateTime to) {
 			return Utilities.DefaultSession.CreateQuery(
-				"from Event as event where event.Timestamp between :from and :to")
+				"from Event as event where event.Timestamp between :from and :to or event.RepeatInterval > 0")
 				.SetTimestamp("from", from)
 				.SetTimestamp("to", to)
 				.List<Event>();
-		}
+        }
     }
 }

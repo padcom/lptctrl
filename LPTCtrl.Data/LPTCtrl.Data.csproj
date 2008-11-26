@@ -52,7 +52,6 @@
     <Compile Include="Domain\Event.cs" />
     <Compile Include="Domain\Pin.cs" />
     <Compile Include="Domain\Port.cs" />
-    <Compile Include="Domain\RepeatedEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities.cs" />
   </ItemGroup>

@@ -28,7 +28,7 @@ namespace LPTCtrl.Service {
         [STAThread]
         static void Main() {
 			log4net.Config.XmlConfigurator.Configure();
-			GenerateTestEvent();
+			//GenerateTestEvent();
 
             ChannelServices.RegisterChannel(new HttpChannel(9998), false);
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(LPTPort), "LPTPort", WellKnownObjectMode.SingleCall);

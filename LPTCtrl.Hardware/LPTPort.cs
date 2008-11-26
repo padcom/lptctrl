@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting;
-using System.Runtime.Remoting.Channels;
-using System.Runtime.Remoting.Channels.Http;
 
-namespace LPTCtrl.Service.Core
+namespace LPTCtrl.Hardware
 {
-    class LPTPort : MarshalByRefObject
+    public class LPTPort : MarshalByRefObject
     {
         [DllImport("inpout32.dll", EntryPoint = "Inp32")]
         private static extern int Input(int adress);

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 
 using LPTCtrl.Data.Domain;
+using LPTCtrl.Hardware;
 using LPTCtrl.Service.Data;
 
 namespace LPTCtrl.Service.Core {

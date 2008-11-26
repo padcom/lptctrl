@@ -11,6 +11,7 @@ using log4net;
 using log4net.Config;
 
 using LPTCtrl.Data.Domain;
+using LPTCtrl.Hardware;
 using LPTCtrl.Service.Core;
 
 namespace LPTCtrl.Service {

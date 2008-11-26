@@ -18,5 +18,10 @@ namespace LPTCtrl.Service.Data {
 				.SetTimestamp("to", to)
 				.List<Event>();
         }
-    }
+
+		public static void SaveEvent(Event e) {
+			Utilities.DefaultSession.Save(e);
+			Utilities.DefaultSession.Flush();
+		}
+	}
 }

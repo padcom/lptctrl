@@ -58,6 +58,8 @@ namespace LPTCtrl.Service.Core {
 			while (ts < now2) {
 				if (ts > now1 & ts < now2) {
 					LPTPort.LPT1.SetBit(e.Pin.Bit, e.State);
+					e.Timestamp = ts;
+					DataProvider.SaveEvent(e);
 					break;
 				} else {
 					ts = ts.AddDays(e.RepeatInterval);

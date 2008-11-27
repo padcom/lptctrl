@@ -4,30 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title></title>
+    <title>LPTCtrl - an intelligent home system</title>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:ObjectDataSource ID="EventsDataSource" runat="server"
-            TypeName="LPTCtrl.Web.DAO.EventDAO" DataObjectTypeName="LPTCtrl.Data.Domain.Event" 
-            SelectMethod="FindAll"
-            SelectCountMethod="CountAll" 
-            InsertMethod="Save" 
-            UpdateMethod="SaveOrUpdate"
-            DeleteMethod="Delete" 
-        >
-        </asp:ObjectDataSource>
-        <asp:GridView ID="GridView1" runat="server"
-            DataSourceID="EventsDataSource" AutoGenerateColumns="False"
-        >
-            <Columns>
-                <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" />
-                <asp:BoundField DataField="Timestamp" HeaderText="Timestamp" SortExpression="Timestamp" />
-                <asp:BoundField DataField="RepeatInterval" HeaderText="RepeatInterval" SortExpression="RepeatInterval" />
-                <asp:CheckBoxField DataField="State" HeaderText="State" SortExpression="State" />
-            </Columns>
-        </asp:GridView>
+    
     </div>
     </form>
 </body>

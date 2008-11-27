@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="LPTCtrl.Data" namespace="LPTCtrl.Data.Domain">
-	<class name="Event" table="EVENT">
+	<class name="Event" table="EVENT" lazy="false">
 		<id name="ID" column="ID" type="int">
 			<generator class="sequence">
 				<param name="sequence">EVENT_ID</param>
@@ -10,6 +10,6 @@
 		<property name="Timestamp" column="TS" type="DateTime" not-null="true" />
 		<property name="RepeatInterval" column="REPEAT" type="int" />
 		<property name="State" column="STATE" type="Boolean" not-null="true" />
-		<many-to-one name="Pin" column="PINID" class="Pin" not-null="true" />
+		<many-to-one name="Pin" column="PINID" class="Pin" not-null="true" lazy="false" />
 	</class>
 </hibernate-mapping>

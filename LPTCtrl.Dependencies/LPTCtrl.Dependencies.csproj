@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7F3AA58C-968A-4107-A214-2E4D434DA073}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -62,7 +62,14 @@
     </Content>
     <Content Include="log4net.dll" />
     <Content Include="log4net.xml" />
+    <Content Include="NHibernate.Burrow.AppBlock.dll" />
+    <Content Include="NHibernate.Burrow.AppBlock.xml" />
+    <Content Include="NHibernate.Burrow.dll" />
+    <Content Include="NHibernate.Burrow.WebUtil.dll" />
+    <Content Include="NHibernate.Burrow.WebUtil.xml" />
+    <Content Include="NHibernate.Burrow.xml" />
     <Content Include="NHibernate.dll" />
     <Content Include="NHibernate.xml" />
+    <Content Include="wwDataBinder.dll" />
   </ItemGroup>
 </Project>

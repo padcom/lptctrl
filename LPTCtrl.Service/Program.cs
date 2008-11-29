@@ -22,10 +22,10 @@ namespace LPTCtrl.Service {
         static void Main() {
 			log4net.Config.XmlConfigurator.Configure();
 
-            ChannelServices.RegisterChannel(new HttpChannel(9998), false);
+			ChannelServices.RegisterChannel(new HttpChannel(Settings.Default.ServicePort), false);
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(LPTPort), "LPTPort", WellKnownObjectMode.SingleCall);
 
-			new Cassini.Server(9997, "/", Settings.Default.WebAppPath).Start();
+			new Cassini.Server(Settings.Default.WebPort, "/", Settings.Default.WebAppPath).Start();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

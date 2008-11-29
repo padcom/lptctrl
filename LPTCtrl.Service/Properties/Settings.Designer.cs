@@ -46,5 +46,29 @@ namespace LPTCtrl.Service.Properties {
                 this["EventPoolingInterval"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("9998")]
+        public int ServicePort {
+            get {
+                return ((int)(this["ServicePort"]));
+            }
+            set {
+                this["ServicePort"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("9997")]
+        public int WebPort {
+            get {
+                return ((int)(this["WebPort"]));
+            }
+            set {
+                this["WebPort"] = value;
+            }
+        }
     }
 }

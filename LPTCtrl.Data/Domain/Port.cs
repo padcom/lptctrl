@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace LPTCtrl.Data.Domain {
+	[Serializable]
 	public class Port {
 		public virtual int ID { get; set; }
 		public virtual int Address { get; set; }

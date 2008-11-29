@@ -13,25 +13,13 @@ using LPTCtrl.Web.DAO;
 
 namespace LPTCtrl.Web {
 	public partial class EditEvents : System.Web.UI.Page {
-
-		[EntityField] Event editedEvent;
-
 		protected void Page_Load(object sender, EventArgs e) {
-
+			if (!IsPostBack) {
+			}
 		}
 
-		protected void DeleteEventButton_Click(object sender, DataListCommandEventArgs e) {
-			EventDAO dao = new EventDAO();
-			Event ev = dao.Get((int)e.Item.DataItem);
-			dao.Delete(ev);
-			DataBind();
-		}
-
-		protected void EditEventButton_Click(object sender, CommandEventArgs e) {
-			EventDAO dao = new EventDAO();
-			int id = int.Parse((String)e.CommandArgument);
-			this.editedEvent = dao.Get(id);
-			EventsList.SelectedItemTemplate = EventsList.EditItemTemplate;
+		protected void EventsList_SelectedIndexChanged(object sender, EventArgs e) {
+			Response.Redirect("~/EditEvent.aspx?id=" + (int)EventsList.SelectedValue);
 		}
 	}
 }

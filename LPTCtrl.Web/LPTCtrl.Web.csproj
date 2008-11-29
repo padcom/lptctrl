@@ -91,13 +91,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="EditEvent.aspx" />
     <Content Include="EditEvents.aspx" />
+    <Content Include="EditPins.aspx" />
     <Content Include="hibernate.cfg.xml" />
+    <Content Include="Images\apply.png" />
+    <Content Include="Images\button_cancel.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\exit.png" />
+    <Content Include="Images\reload.png" />
+    <Content Include="Images\remove.png" />
+    <Content Include="Images\trashcan.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\EventDAO.cs" />
     <Compile Include="DAO\PinDAO.cs" />
+    <Compile Include="DAO\PortDAO.cs" />
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
@@ -105,12 +116,33 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditEvent.aspx.cs">
+      <DependentUpon>EditEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditEvent.aspx.designer.cs">
+      <DependentUpon>EditEvent.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditEvents.aspx.cs">
       <DependentUpon>EditEvents.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EditEvents.aspx.designer.cs">
       <DependentUpon>EditEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditPins.aspx.cs">
+      <DependentUpon>EditPins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditPins.aspx.designer.cs">
+      <DependentUpon>EditPins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -123,6 +155,9 @@
       <Project>{7F3AA58C-968A-4107-A214-2E4D434DA073}</Project>
       <Name>LPTCtrl.Dependencies</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPage.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

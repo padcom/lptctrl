@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace LPTCtrl.Data.Domain {
+	[Serializable]
 	public class Pin {
 		public virtual int ID { get; set; }
 		public virtual int Bit { get; set; }

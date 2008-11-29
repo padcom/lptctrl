@@ -20,11 +20,11 @@ INSERT INTO PORT (ID, ADDRESS, NAME) VALUES (0, 888, 'LPT1');
 -- PIN
 -------------------------------------------------------------------------------
 
-INSERT INTO PIN (ID, PORTID, BIT, NAME) VALUES (0, 1, 0, '(wolne)');
-INSERT INTO PIN (ID, PORTID, BIT, NAME) VALUES (0, 1, 1, '(wolne)');
-INSERT INTO PIN (ID, PORTID, BIT, NAME) VALUES (0, 1, 2, '(wolne)');
-INSERT INTO PIN (ID, PORTID, BIT, NAME) VALUES (0, 1, 3, '(wolne)');
-INSERT INTO PIN (ID, PORTID, BIT, NAME) VALUES (0, 1, 4, '(wolne)');
-INSERT INTO PIN (ID, PORTID, BIT, NAME) VALUES (0, 1, 5, '(wolne)');
-INSERT INTO PIN (ID, PORTID, BIT, NAME) VALUES (0, 1, 6, '(wolne)');
-INSERT INTO PIN (ID, PORTID, BIT, NAME) VALUES (0, 1, 7, '(wolne)');
+INSERT INTO PIN (ID, PORTID, BIT, NAME) VALUES (0, 1, 0, '1 - (wolne)');
+INSERT INTO PIN (ID, PORTID, BIT, NAME) VALUES (0, 1, 1, '2 - (wolne)');
+INSERT INTO PIN (ID, PORTID, BIT, NAME) VALUES (0, 1, 2, '3 - (wolne)');
+INSERT INTO PIN (ID, PORTID, BIT, NAME) VALUES (0, 1, 3, '4 - (wolne)');
+INSERT INTO PIN (ID, PORTID, BIT, NAME) VALUES (0, 1, 4, '5 - (wolne)');
+INSERT INTO PIN (ID, PORTID, BIT, NAME) VALUES (0, 1, 5, '6 - (wolne)');
+INSERT INTO PIN (ID, PORTID, BIT, NAME) VALUES (0, 1, 6, '7 - (wolne)');
+INSERT INTO PIN (ID, PORTID, BIT, NAME) VALUES (0, 1, 7, '8 - (wolne)');

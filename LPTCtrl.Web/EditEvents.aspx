@@ -1,60 +1,77 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditEvents.aspx.cs" Inherits="LPTCtrl.Web.EditEvents" %>
+﻿<%@ Page MasterPageFile="~/MasterPage.Master" Language="C#" AutoEventWireup="true" CodeBehind="EditEvents.aspx.cs" Inherits="LPTCtrl.Web.EditEvents" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<asp:Content ID="controls" runat="server" ContentPlaceHolderID="controls">
+    <asp:Button ID="EventNew" runat="server" PostBackUrl="~/EditEvent.aspx" Text="New event" />
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-    <title>LPTCtrl - an intelligent home system</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <table border="1">
-            <asp:DataList ID="EventsList" runat="server" 
-                DataSourceID="EventsDataSource" DataKeyField="ID"
-                OnDeleteCommand="DeleteEventButton_Click"
-            >
-                <ItemTemplate>
-                    <tr>
-                        <td>
-                            <asp:LinkButton ID="DeleteEventButton" runat="server" Text="delete" Command="delete" />
-                        </td>
-                        <td>
-                            <asp:LinkButton ID="EditEventButton" runat="server" Text="edit" 
-                                OnCommand="EditEventButton_Click" CommandArgument='<%# Eval("ID") %>' 
-                            />
-                        </td>
-                        <td>          
-                            <asp:Label ID="EventTimestampLabel" runat="server" Text='<%# Eval("Timestamp") %>' />
-                        </td>
-                        <td>
-                            <asp:Label ID="EventPinLabel" runat="server" Text='<%# Eval("Pin.Name") %>' />
-                        <td>
-                        <td>
-                            <asp:Label ID="EventRepeatIntervalLabel" runat="server" Text='<%# Eval("RepeatInterval") %>' />
-                        <td>
-                    </tr>
-                </ItemTemplate>
-                <EditItemTemplate>
-                    <asp:TextBox ID="EventStateTextBox" runat="server" Text='<%# Bind("State") %>' />
-                </EditItemTemplate>
-            </asp:DataList>
-        </table>
-    </div>
+<asp:Content ID="content" runat="server" ContentPlaceHolderID="main">
+<center>
+<br />
+<div>
+    <asp:GridView ID="EventsList" runat="server" Width="90%"
+        DataSourceID="EventsDataSource" DataKeyNames="ID"
+        AutoGenerateColumns="false"
+        HeaderStyle-BackColor="#333399" HeaderStyle-ForeColor="White" 
+        OnSelectedIndexChanged="EventsList_SelectedIndexChanged"
+    ><Columns>
+        <asp:TemplateField ItemStyle-Width="80px" ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Bottom">
+            <HeaderTemplate>
+                Actions
+            </HeaderTemplate>
+            <ItemTemplate>
+                <asp:ImageButton ID="DeleteEventButton" runat="server" ImageUrl="~/Images/delete.png" AlternateText="Delete this event"
+                   CommandName="delete" 
+                />
+                &nbsp;
+                <asp:ImageButton ID="EditEventButton" runat="server" ImageUrl="~/Images/edit.png" AlternateText="Edit this event"
+                   CommandName="select"
+                />
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField ItemStyle-Width="200px" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+            <HeaderTemplate>
+                Timestamp
+            </HeaderTemplate>
+            <ItemTemplate>
+                <asp:Label ID="EventTimestampLabel" runat="server" Text='<%# Eval("Timestamp") %>' />
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderStyle-HorizontalAlign="Center">
+            <HeaderTemplate>
+                Output
+            </HeaderTemplate>
+            <ItemTemplate>
+                <asp:Label ID="EventPinLabel" runat="server" Text='<%# Eval("Pin.Name") %>' />
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+            <HeaderTemplate>
+                State
+            </HeaderTemplate>
+            <ItemTemplate>
+                <asp:Label ID="EventStateLabel" runat="server" Text='<%# ((bool)Eval("State")) ? "ON" : "OFF" %>' />
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+            <HeaderTemplate>
+                Repeat
+            </HeaderTemplate>
+            <ItemTemplate>
+                <asp:Label ID="EventRepeatIntervalLabel" runat="server" Text='<%# Eval("RepeatInterval") %>' />
+            </ItemTemplate>
+        </asp:TemplateField>
+    </Columns></asp:GridView>
+    
     <asp:ObjectDataSource ID="EventsDataSource" runat="server"
         TypeName="LPTCtrl.Web.DAO.EventDAO" DataObjectTypeName="LPTCtrl.Data.Domain.Event" 
-        SelectMethod="FindAll"
+        EnablePaging="True" 
+        SelectMethod="FindAll" MaximumRowsParameterName="pageSize" StartRowIndexParameterName="startRow" SortParameterName="sortExpression"
         SelectCountMethod="CountAll" 
-        EnablePaging="True" MaximumRowsParameterName="pageSize" StartRowIndexParameterName="startRow" SortParameterName="sortExpression"
+        DeleteMethod="Delete"
     >
     </asp:ObjectDataSource>
-    <asp:ObjectDataSource ID="PinDataSource" runat="server"
-        TypeName="LPTCtrl.Web.DAO.PinDAO" DataObjectTypeName="LPTCtrl.Data.Domain.Pin" 
-        SelectMethod="FindAll"
-        SelectCountMethod="CountAll" 
-        EnablePaging="True" MaximumRowsParameterName="pageSize" StartRowIndexParameterName="startRow" SortParameterName="sortExpression"
-    >
-    </asp:ObjectDataSource>
-    </form>
-</body>
-</html>
+</div>
+<br />
+</center>
+
+</asp:Content>

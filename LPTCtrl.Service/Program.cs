@@ -10,6 +10,7 @@ using NHibernate;
 using log4net;
 using log4net.Config;
 
+using LPTCtrl.Service.Properties;
 using LPTCtrl.Data.Domain;
 using LPTCtrl.Hardware;
 using LPTCtrl.Service.Core;
@@ -23,6 +24,8 @@ namespace LPTCtrl.Service {
 
             ChannelServices.RegisterChannel(new HttpChannel(9998), false);
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(LPTPort), "LPTPort", WellKnownObjectMode.SingleCall);
+
+			new Cassini.Server(9997, "/", Settings.Default.WebAppPath).Start();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

@@ -137,6 +137,13 @@
     <Compile Include="EditPins.aspx.designer.cs">
       <DependentUpon>EditPins.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -167,6 +174,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Login.aspx" />
     <Content Include="MasterPage.Master" />
   </ItemGroup>
   <ItemGroup>

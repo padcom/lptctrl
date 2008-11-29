@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cassini, Version=1.0.40305.0, Culture=neutral, PublicKeyToken=132a282791bfaeb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Cassini\Cassini.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\LPTCtrl.Dependencies\Castle.Core.dll</HintPath>

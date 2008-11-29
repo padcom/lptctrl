@@ -1,5 +1,12 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LPTCtrl.Service.Properties" GeneratedClassName="Settings">
   <Profiles />
-  <Settings />
+  <Settings>
+    <Setting Name="WebAppPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">X:\projects\lptctrl-2.0\LPTCtrl.Web</Value>
+    </Setting>
+    <Setting Name="EventPoolingInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

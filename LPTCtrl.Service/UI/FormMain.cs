@@ -9,11 +9,13 @@ using System.Text;
 using System.Windows.Forms;
 
 using LPTCtrl.Service.Core;
+using LPTCtrl.Service.Properties;
 
 namespace LPTCtrl.Service.UI {
     public partial class FormMain : Form {
         public FormMain() {
             InitializeComponent();
+			ActionTimer.Interval = Settings.Default.EventPoolingInterval * 1000;
         }
 
 		private void FormMain_VisibleChanged(object sender, EventArgs e) {

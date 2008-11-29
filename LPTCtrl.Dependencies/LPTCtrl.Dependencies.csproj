@@ -47,6 +47,7 @@
     <Content Include="FirebirdSql.Data.FirebirdClient.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Cassini.dll" />
     <Content Include="Castle.Core.dll" />
     <Content Include="Castle.Core.xml" />
     <Content Include="Castle.DynamicProxy2.dll" />

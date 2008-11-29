@@ -37,6 +37,12 @@
                 </td>
             </tr>
         </table>
+        <br />
+        <table width="800px">
+            <tr>
+                <td colspan="2" align="right" style="font-size: smaller">Copyright (c) 2007-2008 Aplaline. All rights reserved.</td>
+            </tr>
+        </table>
     </div>
     </center>
     </form>

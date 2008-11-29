@@ -43,10 +43,12 @@ namespace LPTCtrl.Web {
 		}
 
 		private void DataFromScreen() {
-			data.Timestamp = DateTime.Parse(EventTimestamp.Text);
-			data.Pin = pinDAO.Get(int.Parse(EventOutput.SelectedValue));
-			data.State = Boolean.Parse(EventState.SelectedValue);
-			data.RepeatInterval = int.Parse(EventRepeatInterval.SelectedValue);
+			if (IsValid) {
+				data.Timestamp = DateTime.Parse(EventTimestamp.Text);
+				data.Pin = pinDAO.Get(int.Parse(EventOutput.SelectedValue));
+				data.State = Boolean.Parse(EventState.SelectedValue);
+				data.RepeatInterval = int.Parse(EventRepeatInterval.SelectedValue);
+			}
 		}
 
 		protected void Page_Load(object sender, EventArgs e) {
@@ -57,13 +59,24 @@ namespace LPTCtrl.Web {
 		}
 
 		protected void EventSave_Click(object sender, EventArgs e) {
-			DataFromScreen();
-			eventDAO.SaveOrUpdate(data);
-			Response.Redirect("~/EditEvents.aspx");
+			if (IsValid) {
+				DataFromScreen();
+				eventDAO.SaveOrUpdate(data);
+				Response.Redirect("~/EditEvents.aspx");
+			}
 		}
 
 		protected void EventCancel_Click(object sender, EventArgs e) {
 			Response.Redirect("~/EditEvents.aspx");
+		}
+
+		protected void TimestampValidator_Validate(object sender, ServerValidateEventArgs e) {
+			try {
+				DateTime.Parse(e.Value);
+				e.IsValid = true;
+			} catch {
+				e.IsValid = false;
+			}
 		}
 	}
 }

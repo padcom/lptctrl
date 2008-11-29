@@ -1,5 +1,9 @@
 ﻿<%@ Page MasterPageFile="~/MasterPage.Master" Language="C#" AutoEventWireup="true" CodeBehind="EditEvent.aspx.cs" Inherits="LPTCtrl.Web.EditEvent" %>
 
+<asp:Content ID="controls" runat="server" ContentPlaceHolderID="controls">
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+</asp:Content>
+
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="main">
 <center>
 <div>
@@ -15,6 +19,7 @@
             <td>Timestamp</td>
             <td>
                 <asp:TextBox ID="EventTimestamp" runat="server" Width="170px"/>
+                <asp:CustomValidator ID="TimestampValidator" runat="server" ControlToValidate="EventTimestamp" Enabled="true" OnServerValidate="TimestampValidator_Validate" ValidateEmptyText="true" Text="Invalid date/time" />
             </td>
         </tr>
         <tr>

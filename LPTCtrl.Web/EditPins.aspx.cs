@@ -42,7 +42,7 @@ namespace LPTCtrl.Web {
 			port.Pins[7].Name = PIN7.Text;
 			foreach (Pin pin in port.Pins)
 				new PinDAO().SaveOrUpdate(pin);
-			Master.StatusMsg = "Saved...";
+			Master.StatusMsg = "Saved.";
 		}
 	}
 }

@@ -10,6 +10,7 @@
 </head>
 <body style="font-family: Verdana">
     <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" />
     <center>
     <div>
         <table cellspacing="0" width="800px" style="border: solid 1px black">
@@ -19,7 +20,7 @@
                 </td>
             </tr>
             <tr>
-                <td style="width: 150px; vertical-align:top; border-right: solid 1px black; font-size: smaller; text-align: center">
+                <td style="width: 150px; vertical-align:top; border-right: solid 1px black; font-size: smaller; text-align: center; vertical-align: top">
                     <br />
                     <a href="Default.aspx">..:: Status page ::..</a><br />
                     <a href="EditEvents.aspx">..:: Edit events ::..</a><br />
@@ -31,7 +32,7 @@
                     <br /><br /><br />
                     <asp:Label ID="StatusMsgLabel" runat="server" Text="" ForeColor="Red" />
                 </td>
-                <td>
+                <td style="vertical-align: top">
                     <asp:ContentPlaceHolder ID="main" runat="server"></asp:ContentPlaceHolder>
                 </td>
             </tr>

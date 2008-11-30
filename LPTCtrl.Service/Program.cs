@@ -16,20 +16,20 @@ using LPTCtrl.Hardware;
 using LPTCtrl.Service.Core;
 
 namespace LPTCtrl.Service {
-    static class Program {
+	static class Program {
 
-        [STAThread]
-        static void Main() {
+		[STAThread]
+		static void Main() {
 			log4net.Config.XmlConfigurator.Configure();
 
 			ChannelServices.RegisterChannel(new HttpChannel(Settings.Default.ServicePort), false);
-            RemotingConfiguration.RegisterWellKnownServiceType(typeof(LPTPort), "LPTPort", WellKnownObjectMode.SingleCall);
+			RemotingConfiguration.RegisterWellKnownServiceType(typeof(LPTPort), "LPTPort", WellKnownObjectMode.SingleCall);
 
 			new Cassini.Server(Settings.Default.WebPort, "/", Settings.Default.WebAppPath).Start();
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LPTCtrl.Service.UI.FormMain());
-        }
-    }
+			Application.EnableVisualStyles();
+			Application.SetCompatibleTextRenderingDefault(false);
+			Application.Run(new LPTCtrl.Service.UI.FormMain());
+		}
+	}
 }

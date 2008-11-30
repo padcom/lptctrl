@@ -42,8 +42,7 @@
 			// 
 			// TrayIconMenu
 			// 
-			this.TrayIconMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CloseMenuItem});
+			this.TrayIconMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.CloseMenuItem});
 			this.TrayIconMenu.Name = "TrayIconMenu";
 			this.TrayIconMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
 			this.TrayIconMenu.Size = new System.Drawing.Size(101, 26);

@@ -32,219 +32,75 @@ namespace LPTCtrl.Web {
         protected global::System.Web.UI.Timer UpdateTimer;
         
         /// <summary>
-        /// PIN0 control.
+        /// Pin0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PIN0;
+        protected global::LPTCtrl.Web.Components.PinStatusViewer Pin0;
         
         /// <summary>
-        /// PIN0Status control.
+        /// Pin1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PIN0Status;
+        protected global::LPTCtrl.Web.Components.PinStatusViewer Pin1;
         
         /// <summary>
-        /// PIN0Toggle control.
+        /// Pin2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PIN0Toggle;
+        protected global::LPTCtrl.Web.Components.PinStatusViewer Pin2;
         
         /// <summary>
-        /// PIN1 control.
+        /// Pin3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PIN1;
+        protected global::LPTCtrl.Web.Components.PinStatusViewer Pin3;
         
         /// <summary>
-        /// PIN1Status control.
+        /// Pin4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PIN1Status;
+        protected global::LPTCtrl.Web.Components.PinStatusViewer Pin4;
         
         /// <summary>
-        /// PIN1Toggle control.
+        /// Pin5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PIN1Toggle;
+        protected global::LPTCtrl.Web.Components.PinStatusViewer Pin5;
         
         /// <summary>
-        /// PIN2 control.
+        /// Pin6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PIN2;
+        protected global::LPTCtrl.Web.Components.PinStatusViewer Pin6;
         
         /// <summary>
-        /// PIN2Status control.
+        /// Pin7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PIN2Status;
-        
-        /// <summary>
-        /// PIN2Toggle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PIN2Toggle;
-        
-        /// <summary>
-        /// PIN3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PIN3;
-        
-        /// <summary>
-        /// PIN3Status control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PIN3Status;
-        
-        /// <summary>
-        /// PIN3Toggle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PIN3Toggle;
-        
-        /// <summary>
-        /// PIN4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PIN4;
-        
-        /// <summary>
-        /// PIN4Status control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PIN4Status;
-        
-        /// <summary>
-        /// PIN4Toggle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PIN4Toggle;
-        
-        /// <summary>
-        /// PIN5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PIN5;
-        
-        /// <summary>
-        /// PIN5Status control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PIN5Status;
-        
-        /// <summary>
-        /// PIN5Toggle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PIN5Toggle;
-        
-        /// <summary>
-        /// PIN6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PIN6;
-        
-        /// <summary>
-        /// PIN6Status control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PIN6Status;
-        
-        /// <summary>
-        /// PIN6Toggle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PIN6Toggle;
-        
-        /// <summary>
-        /// PIN7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PIN7;
-        
-        /// <summary>
-        /// PIN7Status control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PIN7Status;
-        
-        /// <summary>
-        /// PIN7Toggle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PIN7Toggle;
+        protected global::LPTCtrl.Web.Components.PinStatusViewer Pin7;
     }
 }

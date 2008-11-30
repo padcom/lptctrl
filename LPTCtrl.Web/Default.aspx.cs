@@ -16,22 +16,22 @@ namespace LPTCtrl.Web {
 
 		private void UpdateStatuses() {
 			Port port = new PortDAO().Get(1);
-			PIN0.Text = port.Pins[0].Name;
-			PIN1.Text = port.Pins[1].Name;
-			PIN2.Text = port.Pins[2].Name;
-			PIN3.Text = port.Pins[3].Name;
-			PIN4.Text = port.Pins[4].Name;
-			PIN5.Text = port.Pins[5].Name;
-			PIN6.Text = port.Pins[6].Name;
-			PIN7.Text = port.Pins[7].Name;
-			PIN0Status.Text = GetPinState(port.Pins[0].Bit) ? "ON" : "OFF";
-			PIN1Status.Text = GetPinState(port.Pins[1].Bit) ? "ON" : "OFF";
-			PIN2Status.Text = GetPinState(port.Pins[2].Bit) ? "ON" : "OFF";
-			PIN3Status.Text = GetPinState(port.Pins[3].Bit) ? "ON" : "OFF";
-			PIN4Status.Text = GetPinState(port.Pins[4].Bit) ? "ON" : "OFF";
-			PIN5Status.Text = GetPinState(port.Pins[5].Bit) ? "ON" : "OFF";
-			PIN6Status.Text = GetPinState(port.Pins[6].Bit) ? "ON" : "OFF";
-			PIN7Status.Text = GetPinState(port.Pins[7].Bit) ? "ON" : "OFF";
+			Pin0.PinName = port.Pins[0].Name;
+			Pin1.PinName = port.Pins[1].Name;
+			Pin2.PinName = port.Pins[2].Name;
+			Pin3.PinName = port.Pins[3].Name;
+			Pin4.PinName = port.Pins[4].Name;
+			Pin5.PinName = port.Pins[5].Name;
+			Pin6.PinName = port.Pins[6].Name;
+			Pin7.PinName = port.Pins[7].Name;
+			Pin0.State = GetPinState(port.Pins[0].Bit) ? "ON" : "OFF";
+			Pin1.State = GetPinState(port.Pins[1].Bit) ? "ON" : "OFF";
+			Pin2.State = GetPinState(port.Pins[2].Bit) ? "ON" : "OFF";
+			Pin3.State = GetPinState(port.Pins[3].Bit) ? "ON" : "OFF";
+			Pin4.State = GetPinState(port.Pins[4].Bit) ? "ON" : "OFF";
+			Pin5.State = GetPinState(port.Pins[5].Bit) ? "ON" : "OFF";
+			Pin6.State = GetPinState(port.Pins[6].Bit) ? "ON" : "OFF";
+			Pin7.State = GetPinState(port.Pins[7].Bit) ? "ON" : "OFF";
 		}
 
 		private bool GetPinState(int bit) {

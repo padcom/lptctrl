@@ -24,6 +24,7 @@ namespace LPTCtrl.Service.Core {
 				}
 				Thread.Sleep(1);
 			}
+			DataProvider.Clear();
 		}
 
 		/// <summary>

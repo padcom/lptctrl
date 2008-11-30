@@ -12,6 +12,7 @@ using LPTCtrl.Data.Domain;
 namespace LPTCtrl.Service.Data {
 	class DataProvider {
 		public static IList<Event> GetEvents(DateTime from, DateTime to) {
+			Utilities.DefaultSession.Flush();
 			return Utilities.DefaultSession.CreateQuery(
 				"from Event as event where event.Timestamp between :from and :to or event.RepeatInterval > 0")
 				.SetTimestamp("from", from)
@@ -22,6 +23,10 @@ namespace LPTCtrl.Service.Data {
 		public static void SaveEvent(Event e) {
 			Utilities.DefaultSession.Save(e);
 			Utilities.DefaultSession.Flush();
+		}
+
+		internal static void Clear() {
+			Utilities.DefaultSession.Clear();
 		}
 	}
 }

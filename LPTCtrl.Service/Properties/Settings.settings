@@ -12,7 +12,7 @@
       <Value Profile="(Default)">9998</Value>
     </Setting>
     <Setting Name="WebPort" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">9997</Value>
+      <Value Profile="(Default)">9999</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -61,7 +61,7 @@ namespace LPTCtrl.Service.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("9997")]
+        [global::System.Configuration.DefaultSettingValueAttribute("9999")]
         public int WebPort {
             get {
                 return ((int)(this["WebPort"]));

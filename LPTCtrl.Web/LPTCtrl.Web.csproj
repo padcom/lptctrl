@@ -95,14 +95,8 @@
     <Content Include="EditEvents.aspx" />
     <Content Include="EditPins.aspx" />
     <Content Include="hibernate.cfg.xml" />
-    <Content Include="Images\apply.png" />
-    <Content Include="Images\button_cancel.png" />
     <Content Include="Images\delete.png" />
     <Content Include="Images\edit.png" />
-    <Content Include="Images\exit.png" />
-    <Content Include="Images\reload.png" />
-    <Content Include="Images\remove.png" />
-    <Content Include="Images\trashcan.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -11,6 +11,11 @@ namespace LPTCtrl.Web.Components {
 
 		}
 
+		public string Bit {
+			get { return BitLabel.Text; }
+			set { BitLabel.Text = value; }
+		}
+
 		public string PinName {
 			get { return PinNameLabel.Text; }
 			set { PinNameLabel.Text = value; }

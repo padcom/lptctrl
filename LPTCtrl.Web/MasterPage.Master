@@ -22,9 +22,9 @@
             <tr>
                 <td style="width: 150px; vertical-align:top; border-right: solid 1px black; font-size: smaller; text-align: center; vertical-align: top">
                     <br />
-                    <a href="Default.aspx">..:: Status page ::..</a><br />
-                    <a href="EditEvents.aspx">..:: Edit events ::..</a><br />
-                    <a href="EditPins.aspx">..:: Edit pins ::..</a>
+                    <a href="Default.aspx">.:Status page:.</a><br />
+                    <a href="EditEvents.aspx">.:Edit events:.</a><br />
+                    <a href="EditPins.aspx">.:Edit pins:.</a>
                     <br /><br />
                     <asp:LinkButton ID="LogoutButton" runat="server" OnClick="LogoutButton_Click" Text="..:: Logout ::.." />
                     <br /><br /><br />

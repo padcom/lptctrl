@@ -16,6 +16,14 @@ namespace LPTCtrl.Web {
 
 		private void UpdateStatuses() {
 			Port port = new PortDAO().Get(1);
+			Pin0.Bit = "0";
+			Pin1.Bit = "1";
+			Pin2.Bit = "2";
+			Pin3.Bit = "3";
+			Pin4.Bit = "4";
+			Pin5.Bit = "5";
+			Pin6.Bit = "6";
+			Pin7.Bit = "7";
 			Pin0.PinName = port.Pins[0].Name;
 			Pin1.PinName = port.Pins[1].Name;
 			Pin2.PinName = port.Pins[2].Name;

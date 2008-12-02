@@ -1,0 +1,1 @@
+@start Service\LPTCtrl.Service.exe

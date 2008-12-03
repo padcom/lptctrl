@@ -50,6 +50,16 @@ namespace LPTCtrl.Web {
 			UpdateStatuses();
 		}
 
+		protected void TurnAllOffButton_Click(object sender, EventArgs e) {
+			new WebService.LPTPortService().Set(0);
+			UpdateStatuses();
+		}
+
+		protected void TurnAllOnButton_Click(object sender, EventArgs e) {
+			new WebService.LPTPortService().Set(255);
+			UpdateStatuses();
+		}
+
 		protected void TogglePin0(object sender, EventArgs e) {
 			new WebService.LPTPortService().ToggleBit(0);
 			UpdateStatuses();

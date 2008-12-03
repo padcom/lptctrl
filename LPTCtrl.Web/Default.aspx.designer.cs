@@ -14,6 +14,24 @@ namespace LPTCtrl.Web {
     public partial class _Default {
         
         /// <summary>
+        /// TurnAllOnButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button TurnAllOnButton;
+        
+        /// <summary>
+        /// TurnAllOffButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button TurnAllOffButton;
+        
+        /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>

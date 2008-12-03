@@ -2,6 +2,11 @@
 
 <%@ Register src="Components/PinStatusViewer.ascx" tagname="PinStatusViewer" tagprefix="lptctrl" %>
 
+<asp:Content ID="controls" runat="server" ContentPlaceHolderID="controls">
+    <asp:Button ID="TurnAllOnButton" runat="server" OnClick="TurnAllOnButton_Click" Text="All ON" Width="80px" /><br />
+    <asp:Button ID="TurnAllOffButton" runat="server" OnClick="TurnAllOffButton_Click" Text="All OFF" Width="80px" /><br />
+</asp:Content>
+
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="main">
     <br />
     <center>

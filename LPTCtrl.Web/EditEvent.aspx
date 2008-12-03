@@ -1,5 +1,7 @@
 ﻿<%@ Page MasterPageFile="~/MasterPage.Master" Language="C#" AutoEventWireup="true" CodeBehind="EditEvent.aspx.cs" Inherits="LPTCtrl.Web.EditEvent" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="main">
     <br />
     <center><div>
@@ -15,6 +17,7 @@
                 <td>
                     <asp:TextBox ID="EventTimestamp" runat="server" Width="170px"/>
                     <asp:CustomValidator ID="TimestampValidator" runat="server" ControlToValidate="EventTimestamp" Enabled="true" OnServerValidate="TimestampValidator_Validate" ValidateEmptyText="true" Text="Invalid date/time" />
+                    <ajax:MaskedEditExtender ID="TimestampExtender" runat="server" TargetControlID="EventTimestamp" Mask="9999/99/99 99:99:99" MaskType="DateTime" ClearTextOnInvalid="false" />
                 </td>
             </tr>
             <tr>

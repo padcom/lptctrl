@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using System.Diagnostics;
+
 using LPTCtrl.Service.Core;
 using LPTCtrl.Service.Properties;
 
@@ -35,6 +37,13 @@ namespace LPTCtrl.Service.UI {
 
 		private void ActionTimer_Tick(object sender, EventArgs e) {
 			new EventProcessor().ProcessEvents(ActionTimer.Interval);
+		}
+
+		private void LaunchGUIMenuItem_Click(object sender, EventArgs e) {
+			Process process = new Process();
+			process.StartInfo.FileName = String.Format("http://localhost:{0}/Default.aspx", Settings.Default.WebPort);
+			process.StartInfo.UseShellExecute = true;
+			process.Start();
 		}
 	}
 }

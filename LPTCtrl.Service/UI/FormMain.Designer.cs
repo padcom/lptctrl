@@ -30,6 +30,8 @@
 			this.TrayIconMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.CloseMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ActionTimer = new System.Windows.Forms.Timer(this.components);
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.LaunchGUIMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.TrayIconMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -42,15 +44,18 @@
 			// 
 			// TrayIconMenu
 			// 
-			this.TrayIconMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.CloseMenuItem});
+			this.TrayIconMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.LaunchGUIMenuItem,
+            this.toolStripSeparator1,
+            this.CloseMenuItem});
 			this.TrayIconMenu.Name = "TrayIconMenu";
 			this.TrayIconMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-			this.TrayIconMenu.Size = new System.Drawing.Size(101, 26);
+			this.TrayIconMenu.Size = new System.Drawing.Size(153, 76);
 			// 
 			// CloseMenuItem
 			// 
 			this.CloseMenuItem.Name = "CloseMenuItem";
-			this.CloseMenuItem.Size = new System.Drawing.Size(100, 22);
+			this.CloseMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.CloseMenuItem.Text = "&Close";
 			this.CloseMenuItem.Click += new System.EventHandler(this.CloseMenuItem_Click);
 			// 
@@ -59,6 +64,18 @@
 			this.ActionTimer.Enabled = true;
 			this.ActionTimer.Interval = 1000;
 			this.ActionTimer.Tick += new System.EventHandler(this.ActionTimer_Tick);
+			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+			// 
+			// LaunchGUIMenuItem
+			// 
+			this.LaunchGUIMenuItem.Name = "LaunchGUIMenuItem";
+			this.LaunchGUIMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.LaunchGUIMenuItem.Text = "Launch GUI";
+			this.LaunchGUIMenuItem.Click += new System.EventHandler(this.LaunchGUIMenuItem_Click);
 			// 
 			// FormMain
 			// 
@@ -82,5 +99,7 @@
         private System.Windows.Forms.Timer ActionTimer;
         private System.Windows.Forms.ContextMenuStrip TrayIconMenu;
         private System.Windows.Forms.ToolStripMenuItem CloseMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem LaunchGUIMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
